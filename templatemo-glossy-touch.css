@@ -802,3 +802,16 @@ audio:hover {
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
     transform: scale(1.05);
 }
+
+@media (max-width: 768px) {
+    /* Tắt hiệu ứng cho các thẻ chính trong template của bạn */
+    .hero-content,
+    .feature-card,
+    .service-card,
+    #footer {
+        animation: none !important;
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+    }
+}
