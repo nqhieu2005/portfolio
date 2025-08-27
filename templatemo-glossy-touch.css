@@ -766,3 +766,39 @@ button[type="submit"] {
             transform: translateX(15px) scale(1.1);
             box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
         }
+
+        /* Tạo hiệu ứng rung nhẹ (pulse) */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.02);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Áp dụng hiệu ứng cho thẻ audio */
+audio {
+    /* Đảm bảo thẻ audio luôn hiển thị trên các phần tử khác */
+    z-index: 1000; 
+    /* Áp dụng animation */
+    animation-name: pulse;
+    animation-duration: 2s; /* Tốc độ của animation */
+    animation-timing-function: ease-in-out; /* Kiểu chuyển động */
+    animation-iteration-count: infinite; /* Lặp lại vô hạn */
+    /* Thêm hiệu ứng đổ bóng nhẹ để làm nổi bật */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Bo tròn góc */
+    border-radius: 12px;
+    /* Thêm hiệu ứng chuyển đổi mượt mà */
+    transition: all 0.3s ease;
+}
+
+/* Thêm hiệu ứng khi người dùng di chuột vào */
+audio:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transform: scale(1.05);
+}
