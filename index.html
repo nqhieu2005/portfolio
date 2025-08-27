@@ -499,7 +499,19 @@ https://templatemo.com/tm-592-glossy-touch
 </script>
 
 <script>
-    document.addEventListener('DOMContentLoaded', (event) => {
+
+const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+if (isMobile) {
+    // Nếu là thiết bị di động, tìm thẻ audio
+    const audioPlayer = document.getElementById('background-audio');
+    if (audioPlayer) {
+        // Tạm dừng nhạc và loại bỏ nó khỏi trang
+        audioPlayer.pause();
+        audioPlayer.remove();
+    }
+} else {
+document.addEventListener('DOMContentLoaded', (event) => {
     const audio = document.getElementById('background-audio');
     const musicNote = document.getElementById('music-note');
     let hasPlayed = false;
@@ -515,8 +527,10 @@ https://templatemo.com/tm-592-glossy-touch
                 musicNote.style.display = 'none';
             }
         }
-    }, { once: true });
-});
+    }, { once: true });});
+}
+
+    
 </script>
 </body>
 </html>
