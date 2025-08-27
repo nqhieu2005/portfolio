@@ -26,6 +26,7 @@ let currentPage = 'home';
             
             // Scroll to top
             window.scrollTo({ top: 0, behavior: 'smooth' });
+            
         }
 
         // Initialize footer position
